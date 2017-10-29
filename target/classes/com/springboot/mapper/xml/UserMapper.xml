@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springboot.mapper.UserMapper">
+
+       <select id="findUserById" resultType="com.springboot.entity.User">
+              select
+              pkid as 'id',username as 'name'
+              from storagebatteryuserinfo
+              where pkid = #{id}
+       </select>
+
+       <update id="updateUsers">
+              update storagebatteryuserinfo set username='admin666'
+              where pkid = #{id}
+       </update>
+
+       <update id="updateUsersIds">
+              update storagebatteryuserinfo set pkid='123'
+              where pkid = #{id}
+       </update>
+</mapper>
